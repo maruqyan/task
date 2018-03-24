@@ -16,10 +16,11 @@ router.get('/update/:id', function(req, res, next) {
 
 router.post('/', (req, res, next) => {
   let users = new Users(req.body);
+  console.log(users)
   users.save().then((user) => {
     res.send('ok')
   }).catch((err) => {
-    throw err
+    throw err;
     console.log(err);
   })
 })
